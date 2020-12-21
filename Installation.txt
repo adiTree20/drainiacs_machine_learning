@@ -1,0 +1,20 @@
+Need Python 3.7 (https://www.python.org/ftp/python/3.7.0/python-3.7.0-amd64.exe)
+
+# Create virtual environment
+python -m venv drainiacs
+
+# Activate virtual environment
+drainiacs\Scripts\activate.bat
+
+# Install required packages
+pip install pycparser
+pip install Cython
+pip install numpy==1.19.3
+
+pip install pyrealsense2-2.40.0.2483-cp37-cp37m-win_amd64.whl
+Test the installation by typing following on command prompt
+	python -c "import pyrealsense2"
+	If you get python error, uninstall (pip uninstall pyrealsense2) and reinstall package (pip install pyrealsense2)
+
+pip install opencv-python
+pip install pyglet
