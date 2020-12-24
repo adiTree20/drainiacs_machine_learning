@@ -6,6 +6,8 @@
 #####################################################
 
 # First import the library
+# python.venvPath = 'c:/Users/adity/AppData/Local/Programs/Python/Python37/drainiacs'
+
 import pyrealsense2 as rs
 
 try:
