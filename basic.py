@@ -23,19 +23,22 @@ try:
         if not depth: continue
 
         # Print a simple text-based representation of the image, by breaking it into 10x20 pixel regions and approximating the coverage of pixels within one meter
-        coverage = [0]*64
+        coverage = [0]*128
         for y in range(480):
             for x in range(640):
                 dist = depth.get_distance(x, y)
-                if 0 < dist and dist < 1:
-                    coverage[x//10] += 1
+                if 0 < dist and dist < 5:
+                    coverage[x//5] += 1
             
             if y%20 is 19:
                 line = ""
                 for c in coverage:
                     line += " .:nhBXWW"[c//25]
-                coverage = [0]*64
-                print(line)
+                coverage = [0]*128
+                print("\033[1;32;40m" + line + "\n")
+                
+            
+        exit(0)
     exit(0)
 #except rs.error as e:
 #    # Method calls agaisnt librealsense objects may throw exceptions of type pylibrs.error
